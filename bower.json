@@ -23,7 +23,6 @@
   ],
   "dependencies": {
     "polymer": "Polymer/polymer#^1.0.0",
-    "google-apis": "cpboyd/google-apis#master",
     "iron-ajax": "PolymerElements/iron-ajax#^1.0.0"
   },
   "devDependencies": {

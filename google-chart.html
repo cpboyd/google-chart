@@ -1,6 +1,5 @@
 <link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="../iron-ajax/iron-ajax.html">
-<link rel="import" href="../google-apis/google-legacy-loader.html">
 
 <!--
 `google-chart` encapsulates Google Charts as a web component, allowing you to easily visualize
@@ -44,7 +43,6 @@ Data can be provided in one of three ways:
     <iron-ajax id="ajax" handle-as="json" url="{{data}}"
       on-response="_externalDataLoaded"></iron-ajax>
     <div id="chartdiv"></div>
-    <google-legacy-loader on-api-load="_readyForAction"></google-legacy-loader>
   </template>
 </dom-module>
 
@@ -211,7 +209,7 @@ Data can be provided in one of three ways:
 
     _chartTypes: null,
 
-    _readyForAction: function(e, detail, sender) {
+    attached: function() {
       this._loadPackageByChartType();
 
       google.load("visualization", "1", {
